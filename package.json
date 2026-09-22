@@ -1,6 +1,6 @@
 {
   "name": "dsh-docx-sidebar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DSH web plugin (dsh-better-sidebar consumer): render .docx documents as a readable structured view in the right sidebar — headings, paragraphs, lists, real tables, inline images — with a circuit breaker so no document can freeze the tab. Reading view, not a layout reproduction.",
   "type": "module",
   "main": "lib/index.mjs",

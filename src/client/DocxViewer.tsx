@@ -11,6 +11,8 @@
 import { useEffect, useState } from 'react'
 import { readDocx } from './docx'
 import { formatBytes } from './circuit-breaker'
+import { INDENT_EM } from './scale'
+import { useReaderScale } from './useReaderScale'
 import { basename } from './utils'
 import type { ReactNode } from 'react'
 import type { T } from './locales'
@@ -34,6 +36,9 @@ export function DocxViewer({ path, title, customData, t }: DocxViewerProps) {
   const [result, setResult] = useState<DocResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [urls, setUrls] = useState<Record<string, string>>({})
+  // Drives `--reader-scale` from the pane width; every root below carries it so
+  // the scale survives the loading → ready swap.
+  const rootRef = useReaderScale<HTMLDivElement>()
 
   useEffect(() => {
     if (!isBytes(customData)) return
@@ -69,7 +74,7 @@ export function DocxViewer({ path, title, customData, t }: DocxViewerProps) {
 
   if (!isBytes(customData) || (result === null && error === null)) {
     return (
-      <div className="docx-root">
+      <div className="docx-root" ref={rootRef}>
         <div className="docx-loading">
           <div className="docx-spinner" />
           <div>{t('state.loading')}</div>
@@ -80,7 +85,7 @@ export function DocxViewer({ path, title, customData, t }: DocxViewerProps) {
 
   if (error !== null) {
     return (
-      <div className="docx-root">
+      <div className="docx-root" ref={rootRef}>
         <div className="docx-error">
           <div className="docx-error__title">❌ {t('state.error')}</div>
           <div className="docx-error__hint">{error}</div>
@@ -93,7 +98,7 @@ export function DocxViewer({ path, title, customData, t }: DocxViewerProps) {
   const { meta, warnings, state } = document
 
   return (
-    <div className="docx-root">
+    <div className="docx-root" ref={rootRef}>
       <div className="docx-head">
         <span className="docx-head__name" title={meta.fileName}>
           📄 {meta.fileName}
@@ -167,7 +172,7 @@ function Block({ block, urls, t }: { block: DocBlock; urls: Record<string, strin
     }
     case 'list':
       return (
-        <div className="docx-list" style={{ marginLeft: `${((block.level ?? 1) - 1) * 14}px` }}>
+        <div className="docx-list" style={{ marginLeft: `${((block.level ?? 1) - 1) * INDENT_EM}em` }}>
           {runs(block.runs ?? [{ text: block.text }])}
         </div>
       )
