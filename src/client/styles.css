@@ -1,0 +1,275 @@
+/*
+ * dsh-docx-sidebar — stylesheet.
+ *
+ * Injected at runtime: a DSH plugin has no CSS entry point, so the build inlines
+ * this file as a string and `apply` appends one <style> tag inside a
+ * `ctx.effect`, whose disposer removes it on unload.
+ *
+ * Every colour is a DSH design token (`--dsw-alias-*`) with a neutral fallback,
+ * so the reading view follows the active skin.
+ */
+
+.docx-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--dsw-alias-label-primary, #e6e6e6);
+}
+
+/* ── Header strip ────────────────────────────────────────────────────────── */
+
+.docx-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--dsw-alias-border-l1, #2a2a2a);
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary, #aaa);
+}
+
+.docx-head__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+  color: var(--dsw-alias-label-primary, #e6e6e6);
+}
+
+.docx-head__tag {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.06));
+}
+
+/* The one thing a reader must not have to guess. */
+.docx-head__badge {
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  border: 1px solid var(--dsw-alias-border-l2, #3a3a3a);
+  color: var(--dsw-alias-label-caption, #888);
+}
+
+/* ── Breaker banner ──────────────────────────────────────────────────────── */
+
+.docx-warning {
+  margin: 8px 12px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--dsw-alias-state-warn-primary, #fbbf24);
+  background: var(--dsw-alias-state-warn-tertiary, rgba(251, 191, 36, 0.1));
+  font-size: 12px;
+}
+
+.docx-warning--blocked {
+  border-color: var(--dsw-alias-state-error-primary, #ef4444);
+}
+
+.docx-warning__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--dsw-alias-state-warn-label, #fbbf24);
+}
+
+.docx-warning--blocked .docx-warning__head {
+  color: var(--dsw-alias-state-error-primary, #ef4444);
+}
+
+.docx-warning__list {
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary, #aaa);
+}
+
+.docx-warning__list li {
+  margin: 2px 0;
+}
+
+/* ── Blocks ──────────────────────────────────────────────────────────────── */
+
+.docx-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px 14px 24px;
+}
+
+.docx-h {
+  margin: 14px 0 6px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.docx-h--1 { font-size: 20px; }
+.docx-h--2 { font-size: 17px; }
+.docx-h--3 { font-size: 15px; }
+.docx-h--4,
+.docx-h--5,
+.docx-h--6 { font-size: 13px; }
+
+.docx-p {
+  margin: 6px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.docx-list {
+  margin: 4px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.docx-list::before {
+  content: '•';
+  margin-right: 6px;
+  color: var(--dsw-alias-label-caption, #888);
+}
+
+.docx-code {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: var(--dsw-alias-markdown-inline-code, rgba(255, 255, 255, 0.08));
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+}
+
+/* Not part of the body: a header or footer part. */
+.docx-note {
+  margin: 8px 0;
+  padding: 4px 8px;
+  border-left: 2px solid var(--dsw-alias-border-l3, #444);
+  font-size: 11px;
+  color: var(--dsw-alias-label-caption, #888);
+}
+
+.docx-note__label {
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────────────── */
+
+.docx-table-wrap {
+  margin: 10px 0;
+  overflow-x: auto;
+}
+
+.docx-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.docx-table th,
+.docx-table td {
+  padding: 4px 10px;
+  border: 1px solid var(--dsw-alias-border-l1, #2f2f2f);
+  text-align: left;
+  vertical-align: top;
+  max-width: 320px;
+  overflow-wrap: anywhere;
+}
+
+.docx-table th {
+  background: var(--dsw-alias-bg-layer-3, rgba(255, 255, 255, 0.04));
+  font-weight: 600;
+}
+
+.docx-table__caption {
+  padding: 2px 12px 0;
+  font-size: 10px;
+  color: var(--dsw-alias-label-caption, #888);
+}
+
+/* ── Images ──────────────────────────────────────────────────────────────── */
+
+.docx-image {
+  margin: 10px 0;
+}
+
+.docx-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--dsw-alias-border-l1, #2a2a2a);
+}
+
+.docx-image__placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px dashed var(--dsw-alias-border-l2, #3a3a3a);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--dsw-alias-label-caption, #888);
+}
+
+.docx-image__meta {
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--dsw-alias-label-caption, #777);
+  overflow-wrap: anywhere;
+}
+
+/* ── Empty / loading / error ─────────────────────────────────────────────── */
+
+.docx-empty,
+.docx-loading,
+.docx-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--dsw-alias-label-tertiary, #888);
+}
+
+.docx-empty__title,
+.docx-error__title {
+  font-size: 13px;
+  color: var(--dsw-alias-label-secondary, #aaa);
+}
+
+.docx-empty__hint,
+.docx-error__hint {
+  font-size: 11px;
+  color: var(--dsw-alias-label-caption, #777);
+  max-width: 260px;
+}
+
+.docx-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--dsw-alias-border-l2, #3a3a3a);
+  border-top-color: var(--dsw-alias-brand-primary, #60a5fa);
+  border-radius: 50%;
+  animation: docx-spin 0.8s linear infinite;
+}
+
+@keyframes docx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .docx-spinner {
+    animation-duration: 2s;
+  }
+}
