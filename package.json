@@ -86,8 +86,6 @@
     "build:types": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json",
     "test": "node tests/docx-core.test.mjs",
-    "fixtures": "node scripts/make-docx-fixtures.mjs",
-    "report": "node scripts/report-fixtures.mjs",
     "verify": "npm run build && npm test",
     "publish:npm": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/publish-npm.ps1",
     "profile:migrate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/migrate-profile.ps1",
