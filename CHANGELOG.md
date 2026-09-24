@@ -21,6 +21,12 @@
 
 - 新增 5 项断言（共 19）：基准宽度比例恒为 1、上下限与单调性、不可测量宽度回退、两位小数量化、缩进比例与 14px 对齐。
 
+### Packaging
+
+- **首个 npm 发布**：`dsh-docx-sidebar@0.2.0`，dist-tags `latest` + `dsh-0.1.5`；38 files / 75.8 kB，tarball shasum `1060a5e8bc35e0629cbd59b62d71620bfc5790b0`。
+- 声明 **`repository`** 指回 `drscrewdriver/dsh-docx-sidebar`。收录列表只在已发布包指回仓库时才把 npm 包与仓库关联。
+- **补齐被声明却不存在的脚本**：`publish-npm.ps1` 与 `migrate-profile.ps1` 从同族仓库恢复（前者逐字节相同、本身不含包名，取名与版本都读 package.json）；`fixtures` 与 `report` 在本仓库没有对应实现，悬空声明已删除。
+
 ## 0.1.0 — 2026-09-22
 
 首个版本：`.docx` 阅读视图（非版式还原），零运行时依赖。
