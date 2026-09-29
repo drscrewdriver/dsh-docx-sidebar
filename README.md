@@ -99,11 +99,21 @@ dsh --profile <profile> --dump-config | Select-String dsh-docx-sidebar
 
 | 插件版本 | DSH 宿主范围 | 说明 |
 |---------|-------------|------|
-| 0.3.0 | `>=0.2.0-rc.1 <0.2.1-0` | 0.2.0 线（`compat/0.2.0` 分支）。纯元数据适配：消费面全部是 `ctx.get(...)` 纯 caller，0.2.0-rc.1 对 0.1.7 插件 API 完全兼容 |
-| 0.2.0 | `>=0.1.5-rc.1 <0.2.0-0` | 由 `main` 服务 |
+| 0.3.0 | `>=0.2.0-rc.1 <0.2.1-0` | 0.2.0 线（`main`，自 `compat/0.2.0` 升格）。纯元数据适配：消费面全部是 `ctx.get(...)` 纯 caller，0.2.0-rc.1 对 0.1.7 插件 API 完全兼容 |
+| 0.2.0 | `>=0.1.5-rc.1 <0.2.0-0` | 由冻结分支 `compat/0.1.7` / `compat/0.1.5` 服务 |
 
 `package.json` 的 `engines.dsh`、`@deepseek-ai/dsh-client-locale` peer 与 `dsh.plugin.json` 的 `engines.dsh` 三处同范围、保持一致。
 
 ## 七、与 `dsh-opensheet-sidebar` 的关系
 
 表格（csv/xlsx）与文档（docx）**按能力域分成两个插件**，各自自包含：插件之间不做 import —— 那会造出两个"软依赖"插件之间的硬耦合与安装顺序陷阱。共享的 zip/解压预算代码各持一份；等到出现**第三个**使用者再考虑抽公共包（阈值驱动，而不是提前设计）。
+
+## 多语言说明 / Sprachen / Langues / Языки / Idiomas / Lingue
+
+本 README 以中文撰写。安装与兼容性速览（本线要求 DSH 0.2.0：`>=0.2.0-rc.1 <0.2.1-0`；安装：`dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`）：
+
+- **Deutsch** — benötigt DSH 0.2.0 (`>=0.2.0-rc.1 <0.2.1-0`), getestet gegen DSH 0.2.0-rc.1. Installation: `dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`. Die 0.1.x-Wirtslinie wird von den eingefrorenen Zweigen `compat/0.1.7` / `compat/0.1.5` (npm-Tags `dsh-0.1.7` / `dsh-0.1.5`) versorgt.
+- **Français** — nécessite DSH 0.2.0 (`>=0.2.0-rc.1 <0.2.1-0`), testé avec DSH 0.2.0-rc.1. Installation : `dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`. La lignée d'hôtes 0.1.x est assurée par les branches figées `compat/0.1.7` / `compat/0.1.5` (tags npm `dsh-0.1.7` / `dsh-0.1.5`).
+- **Русский** — требуется DSH 0.2.0 (`>=0.2.0-rc.1 <0.2.1-0`), протестировано на DSH 0.2.0-rc.1. Установка: `dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`. Линия хостов 0.1.x обслуживается замороженными ветками `compat/0.1.7` / `compat/0.1.5` (npm-теги `dsh-0.1.7` / `dsh-0.1.5`).
+- **Español** — requiere DSH 0.2.0 (`>=0.2.0-rc.1 <0.2.1-0`), probado con DSH 0.2.0-rc.1. Instalación: `dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`. La línea de anfitriones 0.1.x la atienden las ramas congeladas `compat/0.1.7` / `compat/0.1.5` (etiquetas npm `dsh-0.1.7` / `dsh-0.1.5`).
+- **Italiano** — richiede DSH 0.2.0 (`>=0.2.0-rc.1 <0.2.1-0`), testato su DSH 0.2.0-rc.1. Installazione: `dsh plugin --profile <profile> add dsh-docx-sidebar@dsh-0.2.0`. La linea di host 0.1.x è servita dai rami congelati `compat/0.1.7` / `compat/0.1.5` (tag npm `dsh-0.1.7` / `dsh-0.1.5`).
