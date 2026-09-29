@@ -95,6 +95,15 @@ dsh --profile <profile> --dump-config | Select-String dsh-docx-sidebar
 
 **依赖**：`dsh-better-sidebar >= 0.18.1`（可选）。缺席时插件正常加载、控制台 warn、不贡献任何条目。
 
+**兼容矩阵**：
+
+| 插件版本 | DSH 宿主范围 | 说明 |
+|---------|-------------|------|
+| 0.3.0 | `>=0.2.0-rc.1 <0.2.1-0` | 0.2.0 线（`compat/0.2.0` 分支）。纯元数据适配：消费面全部是 `ctx.get(...)` 纯 caller，0.2.0-rc.1 对 0.1.7 插件 API 完全兼容 |
+| 0.2.0 | `>=0.1.5-rc.1 <0.2.0-0` | 由 `main` 服务 |
+
+`package.json` 的 `engines.dsh`、`@deepseek-ai/dsh-client-locale` peer 与 `dsh.plugin.json` 的 `engines.dsh` 三处同范围、保持一致。
+
 ## 七、与 `dsh-opensheet-sidebar` 的关系
 
 表格（csv/xlsx）与文档（docx）**按能力域分成两个插件**，各自自包含：插件之间不做 import —— 那会造出两个"软依赖"插件之间的硬耦合与安装顺序陷阱。共享的 zip/解压预算代码各持一份；等到出现**第三个**使用者再考虑抽公共包（阈值驱动，而不是提前设计）。

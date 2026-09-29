@@ -1,5 +1,12 @@
 # Changelog — dsh-docx-sidebar
 
+## 0.3.0 — 2026-09-29
+
+### Changed
+
+- **宿主线换代到 DSH 0.2.0**（`compat/0.2.0` 分支）：`engines.dsh` 与 `@deepseek-ai/dsh-client-locale` peer 从 `>=0.1.5-rc.1 <0.2.0-0` 换到 `>=0.2.0-rc.1 <0.2.1-0`（rc 窗口锁线，0.2.1 起重新评估）。纯元数据适配——消费面全部是 `ctx.get(...)` 纯 caller（自带本地接口定义），0.2.0-rc.1 对 0.1.7 插件 API 完全兼容，零代码修改。0.1.5 线由 `main`（≤0.2.0）继续服务。
+- 依赖树按新线刷新，lockfile 重新生成；`dsh.plugin.json` 的 version/engines 与 `package.json` 同步拉齐。
+
 ## 0.2.0 — 2026-09-23
 
 按侧栏宽度自适应：阅读视图随面板宽度等比缩放，带上下限。

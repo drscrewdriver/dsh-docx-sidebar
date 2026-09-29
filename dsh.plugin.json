@@ -1,14 +1,14 @@
 {
   "id": "dsh-external/dsh-docx-sidebar",
   "name": "dsh-docx-sidebar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": {
     "en": "Read .docx documents in the right sidebar (dsh-better-sidebar consumer): headings, paragraphs, lists, tables and inline images, guarded by a circuit breaker. Reading view, not a layout reproduction.",
     "zh": "在右侧栏阅读 .docx 文档（dsh-better-sidebar 消费者）：标题层级、段落、列表、表格与内联图片，带熔断保护。是阅读视图，不是版式还原。"
   },
   "license": "MIT",
   "engines": {
-    "dsh": ">=0.1.5-rc.1 <0.2.0-0"
+    "dsh": ">=0.2.0-rc.1 <0.2.1-0"
   },
   "contributes": {
     "tools": [],
