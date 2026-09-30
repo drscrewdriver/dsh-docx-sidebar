@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Docx – Pannello laterale",
+    "description": "Leggi documenti .docx nel pannello laterale destro (consumatore di dsh-better-sidebar): titoli, paragrafi, elenchi, tabelle e immagini in linea, con circuit breaker. Vista di lettura, non una riproduzione del layout."
+  }
+}

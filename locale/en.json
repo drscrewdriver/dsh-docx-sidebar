@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Docx Sidebar",
+    "description": "Read .docx documents in the right sidebar (dsh-better-sidebar consumer): headings, paragraphs, lists, tables and inline images, guarded by a circuit breaker. Reading view, not a layout reproduction."
+  }
+}

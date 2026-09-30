@@ -5,7 +5,7 @@
  */
 /** Namespace for every key below. */
 export declare const NS = "dsh-docx-sidebar";
-/** The two built-in languages this plugin ships. */
+/** The nine languages this plugin ships. */
 export declare const dictionaries: Record<string, Record<string, string>>;
 /** Values substituted into a `{placeholder}` template. */
 export type TVars = Record<string, string | number>;

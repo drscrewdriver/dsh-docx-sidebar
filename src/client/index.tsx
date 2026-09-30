@@ -70,7 +70,10 @@ export function apply(rawCtx: unknown): void {
 
   if (ctx.locale !== undefined) {
     for (const [tag, dict] of Object.entries(dictionaries)) {
-      ctx.effect(() => ctx.locale!.register(NS, tag, dict), `dsh-docx-sidebar: dictionary ${tag}`)
+      ctx.effect(() => {
+        try { return ctx.locale!.register(NS, tag, dict) }
+        catch { return () => {} }
+      }, `dsh-docx-sidebar: dictionary ${tag}`)
     }
   }
 
