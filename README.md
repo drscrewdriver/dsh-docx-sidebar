@@ -1,5 +1,7 @@
 # dsh-docx-sidebar
 
+[简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
+
 在 DSH 右侧栏阅读 `.docx`（[dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) 消费者）：标题层级、段落、列表缩进、**真表格**、内联图片，带熔断保护。
 
 > **这是阅读视图，不是版式还原。** 界面顶部直接标着这句话 —— 不做分页、不还原字体、不处理浮动/分栏/修订痕迹。让用户误以为排版差异是 bug，比明说能力边界更糟。
