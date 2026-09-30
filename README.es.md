@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
 
+> ⛔ **Este proyecto ya no se mantiene (2026-10-01).** Las versiones recientes del host DSH incluyen vista previa integrada en el panel lateral para documentos office, así que el plugin deja de mantenerse — no habrá más publicaciones ni adaptación a futuras líneas del host. Las versiones publicadas siguen instalables; para hosts 0.1.x usa las builds de las ramas congeladas `compat/0.1.7` / `compat/0.1.5`.
+
 Lee `.docx` en la barra lateral derecha de DSH (consumidor de [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)): niveles de títulos, párrafos, sangría de listas, **tablas reales**, imágenes en línea, con protección por disyuntor.
 
 > **Esta es una vista de lectura, no una reproducción del diseño.** Esa frase está escrita directamente en la parte superior de la interfaz — sin paginación, sin reproducir fuentes, sin procesar objetos flotantes, columnas ni marcas de revisión. Hacer creer al usuario que las diferencias de maquetación son un bug es peor que declarar claramente los límites de lo posible.

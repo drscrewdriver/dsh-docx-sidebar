@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
 
+> ⛔ **Dieses Projekt wird nicht mehr gepflegt (2026-10-01).** Neuere DSH-Hosts bringen eine eingebaute Seitenleisten-Vorschau für Office-Dokumente mit; dieses Plugin wird nicht weiter gepflegt — keine weiteren Veröffentlichungen, keine Anpassung an künftige Host-Versionen. Veröffentlichte Versionen bleiben installierbar; für 0.1.x-Hosts die Builds aus den eingefrorenen Zweigen `compat/0.1.7` / `compat/0.1.5` verwenden.
+
 Lese `.docx`-Dateien in der rechten DSH-Seitenleiste ([dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)-Konsument): Überschriftenebenen, Absätze, Listen-Einrückung, **echte Tabellen**, Inline-Bilder — mit Schutzschalter-Absicherung.
 
 > **Dies ist eine Leseansicht, kein Layout-Nachbau.** Ganz oben in der Oberfläche steht genau das — keine Paginierung, keine Rekonstruktion von Schriften, keine Verarbeitung von schwebenden Objekten, Spaltensatz oder Änderungsnachverfolgung. Nutzer glauben zu lassen, Layout-Unterschiede seien ein Bug, ist schlimmer, als die Fähigkeitsgrenzen klar auszusprechen.

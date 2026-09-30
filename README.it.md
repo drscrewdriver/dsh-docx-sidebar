@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
 
+> ⛔ **Questo progetto non è più mantenuto (2026-10-01).** Le versioni recenti dell’host DSH includono un’anteprima integrata nel pannello laterale per i documenti office; il plugin cessa di essere mantenuto — nessuna pubblicazione futura, nessun adattamento alle future linee dell’host. Le versioni pubblicate restano installabili; per gli host 0.1.x usate le build dai rami congelati `compat/0.1.7` / `compat/0.1.5`.
+
 Lettura dei `.docx` nella barra laterale destra di DSH (consumer di [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)): livelli dei titoli, paragrafi, rientri degli elenchi, **tabelle vere**, immagini in linea, con protezione a interruttore.
 
 > **Questa è una vista di lettura, non una riproduzione del layout.** La frase è indicata direttamente in cima all'interfaccia — niente impaginazione, nessuna riproduzione dei font, nessuna gestione di oggetti flottanti, colonne o revisioni. Far credere che le differenze di impaginazione siano un bug è peggio che dichiarare chiaramente i limiti delle capacità.

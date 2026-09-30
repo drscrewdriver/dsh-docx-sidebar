@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
 
+> ⛔ **Ce projet n’est plus maintenu (2026-10-01).** Les versions récentes de l’hôte DSH intègrent un aperçu latéral des documents office ; ce plugin cesse d’être maintenu — aucune publication ultérieure, aucune adaptation aux futures lignes de l’hôte. Les versions publiées restent installables ; pour les hôtes 0.1.x, utilisez les versions des branches figées `compat/0.1.7` / `compat/0.1.5`.
+
 Lecture des `.docx` dans la barre latérale droite de DSH (consommateur de [dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)) : niveaux de titres, paragraphes, retraits de listes, **vraies tables**, images en ligne, avec protection par disjoncteur.
 
 > **Ceci est une vue de lecture, pas une restitution de la mise en page.** Cette mention est affichée en haut de l'interface — pas de pagination, aucune restitution des polices, aucun traitement des objets flottants, des colonnes ni des marques de révision. Laisser l'utilisateur croire que des différences de mise en page sont un bug serait pire qu'annoncer clairement les limites de ce qui est possible.

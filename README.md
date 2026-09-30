@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | [Français](README.fr.md) | [Deutsch](README.de.md) | [Italiano](README.it.md) | [Русский](README.ru.md) | [Español](README.es.md)
 
+> ⛔ **本项目已停止维护（2026-10-01）。** DSH 宿主较新版本已内置 office 文档的侧栏预览，本插件不再单独维护、不再发版，也不参与后续宿主版本线适配。已发布版本仍可安装使用；0.1.x 宿主请使用冻结分支 `compat/0.1.7` / `compat/0.1.5` 的对应版本。
+
 在 DSH 右侧栏阅读 `.docx`（[dsh-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) 消费者）：标题层级、段落、列表缩进、**真表格**、内联图片，带熔断保护。
 
 > **这是阅读视图，不是版式还原。** 界面顶部直接标着这句话 —— 不做分页、不还原字体、不处理浮动/分栏/修订痕迹。让用户误以为排版差异是 bug，比明说能力边界更糟。
